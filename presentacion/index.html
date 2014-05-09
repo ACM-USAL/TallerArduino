@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Arduino - ACM</title>
+
+		<meta name="description" content=" posibles">
+		<meta name="author" content="ACM Student Chapter Universidad de Salamanca">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section  data-background="#000">
+					<a class="image" href="http://acm.org" target="_blank">
+						<img src="img/escudo+texto.png" alt="Meny">
+					</a>
+					<p style="color: #fff">University of Salamanca ACM student chapter</p>
+				</section>
+				<section data-transition="linear" data-background="#007777">
+					<h1>Arduino</h1>
+					<img src="img/ArduinoLogo.png">
+
+						<small ><a href="http://acmusal.org.es">ACM USAL</a> / <a href="http://twitter.com/acmsalamanca">@acmSalamanca</a></small>
+					</p>
+				</section>
+
+				<section data-transition="linear">
+					<section>
+					<h2>¿Qué es?</h2>
+					<p>
+					<img src="img/arduino_uno.png">
+					</p>
+					<p>
+						Plataforma libre de software y hardware
+					</p>
+					</section>
+					<section>
+						<h2>Hardware</h2>
+						
+							<img src="img/arduino_todos.png">
+					
+						<li>Diferentes placas para diferentes usos</li>
+						<li>Harward libre: placas genéricas</li>
+					</section>
+
+
+					<section>
+						<h2>Hardware</h2>
+						<ul style="list-style-type: none;">
+							<li><b>Microcontrolador Atmega</b>: Cerebro de la placa</li>
+							<img height="100px" src="img/atmega.png">
+							<li><b>Pines</b>: conectar sensores/actuadores para controlar dispositivos periféricos</li>
+								<img height="100px" src="img/pins_digital.png">
+							<img height="100px" src="img/pins_analog.png">
+							<li><b>USB</b> para cargar programas</li>
+							<li><b>Memoria interna</b>, unos pocos bytes (SRAM y EPROM)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Software</h2>
+						<p>Basado en <b>Wiring</b></p>
+						<p>Programación en <b>C, C++</b></p>
+						<p>Entorno basado en <b>Processing</b></p>
+
+						<p>Funciones base: <code>loop()</code> y <code>setup()</code></p>
+						<img height="350px" src="img/ide.png">
+
+						<p>En pocas líneas se consiguen proyectos elaborados</p>
+					</section>
+					
+				</section>
+				<section data-transition="linear">
+					<section>
+						<h2>¿Para qué sirve Arduino?</h2>
+						<p> Para lo que se te ocurra </p>
+					</section>
+					<section>
+						<h2>¿Para qué sirve Arduino?</h2>
+						<a href="http://www.instructables.com/id/Bacon-Alarm-Clock-Arduino/">
+							<img src="img/arduino-bacon.png">
+						</a>
+						<p> Despertador por Bacon</p>						
+					</section>	
+					<section>
+						<h2>¿Para qué sirve Arduino?</h2>
+						<a href="http://www.instructables.com/id/Bacon-Alarm-Clock-Arduino/">
+							<img src="img/oswatch.jpg">
+						</a>
+						<p> Smartwatch personalizado</p>			
+					</section>
+					<section>
+						<h2>¿Para qué sirve Arduino?</h2>						
+							<img src="img/domotica.png">
+							<p>Domótica</p>
+					</section>
+					<section>
+						<h2>¿Para qué sirve Arduino?</h2>
+												<a href="https://www.youtube.com/watch?v=py-SzWRwSZ8/">
+							<img src="img/dalek.jpg">
+						</a>
+	
+						<p>Exterminate!</p>			
+					</section>
+
+				</section>
+
+				<section data-transition="linear">
+					<section>
+						<h1>Arduino es diferente</h1>
+						<p>Programar microcontroladores puede ser una tarea complicada</p>
+						<p>Arduino simplifica enormemente la tarea</p>
+					</section>
+					<section>
+						<h2>Arduino es fácil</h2>
+						<p>Tanto la programación del equipo como el hardware es fácil y versátil</p>
+						<img src="img/modulo_bluetooth.png">
+						<p>Gracias a los módulos compatibles podemos expandir la funcionalidad con poco esfuerzo</p>
+					</section>
+					<section>
+						<h2>Do-it-yourself!</h2>
+						<p>Crear un sistema Arduino para tus propias necesidades es muy sencillo</p>
+						<p>Multitud de recursos y herramientas.</p>
+						<p> Baratas y sencillas de utilizar</p>
+					</section>
+				</section>
+
+				<section data-transition="linear">
+					<section>
+						<h2>Primer programa</h2>
+					</section>					
+					<section>
+						<h2>Primer programa</h2>
+						<pre><code data-trim contenteditable style="font-size: 25px; margin-top: 20px;">
+void setup(){
+  Serial.begin(9600);
+  pinMode(ledAzul, OUTPUT);  
+  pinMode(ledVerde, OUTPUT);  
+  
+}
+
+void loop(){
+
+  Serial.println("HOLA MUNDO");
+
+  digitalWrite(ledAzul,HIGH);
+  delay(1000);
+  digitalWrite(ledVerde,LOW);
+  delay(1000);
+}
+						</code></pre>
+					</section>	
+					<section>
+						<h2>Control de entrada/salida</h2>
+						<p>Arduino incluye métodos para obtener y enviar información a través de los pines</p>
+
+						<ul>
+							<li><code>int valor = analogRead(PIN)</code> => 0-1023</li>
+							<li><code>int val = digitalRead()</code> = > <code>HIGH</code> | <code>LOW</code></li>
+							<li><code>digitalWrite(PIN, HIGH|LOW)</code></li>
+							<li><code>analogWrite(PIN, 0-255)</code></li>
+								*cuidado! Se hace en un pin digital (PWM)
+
+						</ul>
+					</section>
+					<section>
+						<h2>Carga de programas</h2>
+						<p>¡No es necesario un programador de microcontroladores!</p>
+						<p>Con un cable USB cargamos el programa desde el IDE</p>
+					</section>				
+				</section>
+
+				<section data-transition="linear">			
+					<section>
+						<h2>Ejemplo 1</h2>
+						<p>Parpadeo de un LED</p>
+						<img src="img/ej1.png"/>
+						<p></p>
+							<ul><li>1 LED</li><li>1 resistencia</li></ul>
+
+					</section>
+
+					<section>
+						<h2>Ejemplo 1</h2>
+						<p>Cálculo de la resistencia</p>
+
+						<img src="img/ej1-2.png"/>						<ul style="list-style-type: none;">
+							<li>Alimentacion: 5v</li>
+						<li> Tensión que soporta el LED: 1.9v a 3.5v (según color)</li>
+						<li> Intensidad de funcionamiento: 15mA</li>
+						<li> Resistencia = 100 Ohm</li>						
+					</ul>
+					<p>¡El pin 13 lleva ya una resistencia incorporada!</p>
+
+					</section>
+					<section>
+						<h2>Ejemplo 1</h2>
+
+						<pre><code data-trim contenteditable style="font-size: 25px; margin-top: 20px;">
+
+int pinLed = 12;
+
+void setup()
+{
+  pinMode(pinLed, OUTPUT); //Le decimos que el pin 12 actura como salida para dar los 5V
+}
+
+void loop ()
+{
+  digitalWrite(pinLed, HIGH); //Le decimo que ponga el pin 12 a HIGH, para dar voltaje
+  delay(1000);
+  digitalWrite(pinLed, LOW); //Le decimos que pare el voltaje
+  delay(1000);
+}
+						</code></pre>
+
+				</section>
+			</section>
+
+				<section data-transition="linear">			
+					<section>
+						<h2>Ejemplo 2</h2>
+						<p>LEDs secuenciales</p>
+						<img src="img/ejemplo2.png"/>
+							<ul><li>3 LED</li><li>3 resistencias 100 Ohm</li></ul>
+
+					</section>
+
+					<section>
+						<h2>Ejemplo 2</h2>
+
+						<pre><code data-trim contenteditable style="font-size: 25px; margin-top: 20px;">
+
+int tiempo = 200;
+int leds[] = {4,5,6,7};
+void setup()
+{
+
+  for(int i=0;i<4;i++) pinMode(leds[i],OUTPUT);
+}
+
+void loop()
+{
+
+  secuencia();
+  
+}
+
+
+void secuencia()
+{
+ for (int i = 0; i < 4; i++)
+ {
+   digitalWrite(leds[i],HIGH);
+   delay(tiempo);
+   digitalWrite(leds[i],LOW);
+   delay(tiempo);
+ }
+}
+						</code></pre>
+
+				</section>
+			</section>
+
+
+				<section data-transition="linear">			
+					<section>
+						<h2>Ejemplo 3</h2>
+						<p>Sensor de luz</p>
+						<img src="img/ejemplo3.png"/>
+							<ul><li>1 LED</li><li>2 resistencias 100 Ohm</li><li>1 sensor LDR</li></ul>
+
+					</section>
+
+					<section>
+						<h2>Ejemplo 3</h2>
+
+						<pre><code data-trim contenteditable style="font-size: 25px; margin-top: 20px;">
+
+
+int led = 9;
+int ldr = 0;
+int luz = 0;
+
+void setup()
+{
+//  pinMode(led,OUTPUT);
+  Serial.begin(9600); //Inicio de puerto serie a 9600bps
+}
+
+void loop()
+{
+  luz=analogRead(ldr);
+  monitorizar();
+  if (luz <= 30) analogWrite(led,255);
+  if (luz >= 30) analogWrite (led,0);
+}
+
+
+void monitorizar()
+{
+  Serial.print("El valor de luz es:  ");
+  Serial.println(luz);
+  delay(1000);
+}						</code></pre>
+
+				</section>
+			</section>
+
+
+
+								<section data-transition="linear">
+			
+					<section>
+						<h2>Robots!</h2>	
+						<img src="img/robots.png"/>							
+					</section>
+
+					<section>
+						<h2>ACM-E</h2>	
+						<img src="img/robotlogo.jpg"/>	
+
+					</section>
+
+					<section>
+						<h2>ACM-E</h2>			
+						<img src="img/robot-partes.png"/>	
+					</section>
+
+					<section>
+						<h2>ACM-E</h2>			
+						<img src="img/robo1.png"/>	
+						<p></p>
+					</section>
+
+				</section>
+				
+				<section data-transition="linear">
+					<section>
+						<h2>Siguelineas</h2>
+						<img src="img/siguelineas.png"/>	
+					</section>
+
+					<section>
+						<h2>Emisor/Receptor Infrarrojo</h2>			
+						<img src="img/irs.png"/>	
+					</section>
+
+					<section>
+						<h2>Emisor/Receptor Infrarrojo</h2>			
+						<img src="img/irs2.png"/>	
+					</section>
+
+					<section>
+						<h2>Emisor/Receptor Infrarrojo</h2>			
+						<img src="img/irs3.png"/>	
+					</section>
+
+					<section>
+						<h2>Emisor/Receptor Infrarrojo</h2>			
+						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+#define UMBRAL 700 
+
+int pinLecturaIR = A0;
+
+int pinLED = 6;
+
+void setup()
+{
+  Serial.begin(9600);   
+  pinMode(pinLED, OUTPUT);
+}
+
+void loop()
+{
+
+  int lecturaIR = analogRead(pinLecturaIR);
+
+  Serial.println(lecturaIR);
+
+  if(lecturaIR > UMBRAL)
+  {
+    digitalWrite(pinLED, HIGH);
+  }
+  else
+  {
+    digitalWrite(pinLED, LOW);
+  }
+}						</code></pre>	
+
+				</section>
+
+					</section>
+
+
+				</section>
+				<section data-transition="linear">
+					<section>
+						<h2>Lógica</h2>		
+						<p>Muchas opciones: </p>	
+						<ul>
+							<li> Sencillo (condicional) </li>
+							<li> Complejo (PID) </li>
+							<li> Divertido (Red neuronal) </li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Lógica</h2>			
+						<img src="img/irs4.png"/>	
+						<p>Uno o más sensores</p>
+					</section>
+
+					<section>
+						<h2>Lógica</h2>			
+						<img src="img/irs5.png"/>	
+					</section>
+					<section>
+						<h2>Lógica</h2>			
+
+						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+#define UMBRAL 700 
+
+int pinLecturaIRI = A2;
+int pinLecturaIRC = A1;
+int pinLecturaIRD = A0;
+
+int pinLEDI = 6;
+int pinLEDD = 7;
+
+void setup()
+{
+  Serial.begin(9600);   
+  pinMode(pinLEDI, OUTPUT);
+  pinMode(pinLEDD, OUTPUT);
+}
+
+void loop()
+{
+
+  int lecturaIRI = analogRead(pinLecturaIRI);
+  int lecturaIRC = analogRead(pinLecturaIRC);
+  int lecturaIRD = analogRead(pinLecturaIRD);
+
+
+  Serial.print("Izquierda: ");
+  Serial.println(lecturaIRI);
+  Serial.print("Derecha: ");
+  Serial.println(lecturaIRC);
+  Serial.print("Centro: ");
+  Serial.println(lecturaIRD);
+
+
+  if(lecturaIRI > UMBRAL)
+  {
+    girarDerecha();
+  }
+  else if(lecturaIRD > UMBRAL)
+  {
+    girarIzquierda();
+  }
+  else if(lecturaIRC > UMBRAL)
+  {
+    avanzarRecto();
+  }
+}
+						</code></pre>	
+
+				</section>
+</section>
+
+				<section data-transition="linear">
+					<section>
+						<h2>Motores</h2>
+						<p>Configuración diferencial:</p>
+						<img src="img/ruedas.png"/>	
+
+					</section>
+
+					<section>
+						<h2>Motores</h2>
+						<p>Configuración diferencial:</p>
+						<img src="img/ruedas2.png"/>	
+
+					</section>
+
+					<section>
+						<h2>Controlador de motores</h2>
+						<p>L298N:</p>
+						<img src="img/l298n.png"/>	
+						<ul>
+							<li>Controla dos motores </li>
+							<li>Velocidad </li>
+							<li>Sentido (Puente H) </li>
+							<li>Alimentación externa</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Controlador de motores</h2>
+						<img src="img/motor1.png"/>	
+
+					</section>
+
+					<section>
+						<h2>Controlador de motores</h2>
+						<img src="img/motor2.png"/>	
+					</section>
+
+<section>
+											<h2>Motores</h2>
+		<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+
+					void girarIzquierda()
+{
+
+  digitalWrite(motorAIn1, HIGH);
+  digitalWrite(motorAIn2, LOW);
+  digitalWrite(motorBIn3, HIGH);
+  digitalWrite(motorBIn4, LOW);
+
+  analogWrite(motorAVel, 0);
+  analogWrite(motorBVel, 170); 
+}
+
+void girarDerecha()
+{
+    digitalWrite(motorAIn1, HIGH);
+  digitalWrite(motorAIn2, LOW);
+  digitalWrite(motorBIn3, HIGH);
+  digitalWrite(motorBIn4, LOW);
+
+  analogWrite(motorAVel, 170);
+  analogWrite(motorBVel, 0);
+}
+
+void avanzarRecto()
+{
+  digitalWrite(motorAIn1, HIGH);
+  digitalWrite(motorAIn2, LOW);
+  digitalWrite(motorBIn3, HIGH);
+  digitalWrite(motorBIn4, LOW);
+
+  analogWrite(motorAVel, 170);
+  analogWrite(motorBVel, 170);
+}
+						</code></pre>	
+
+				</section>
+				</section>
+
+				<section data-transition="linear">
+					
+<section>
+						<h2>Sensor de distancias</h2>	
+						
+						<img src="img/us-1.png"/>	
+
+					</section>
+					<section>
+						<h2>Sensor de distancias</h2>	
+						
+						<img src="img/us-2.png"/>	
+
+					</section>
+					<section>
+						<h2>Sensor de distancias</h2>	
+						
+						<img src="img/DistanciaRGB.png"/>	
+
+					</section>
+					<section>
+													<h2>Sensor de distancias</h2>	
+
+				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+					#define TIMEOUT 3000
+
+/* TRIGGER 2 ECHO 3
+   RGB 10 y 11*/
+
+int trigPin = 4;
+int echoPin = 3;
+
+void setup(){
+  Serial.begin(9600);
+  analogWrite(10,200); 
+};
+void loop(){
+  
+  int intensidad =  10*distanciaTimeout(trigPin, echoPin);
+  analogWrite(11,intensidad);
+  Serial.println(intensidad); 
+  delay(100);
+
+};
+
+
+long distanciaTimeout(int trig, int echo){
+  
+  long duration, cm;
+  
+  //Emite un ultrasonido _-----_
+  pinMode(trig, OUTPUT);
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);;
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+ 
+  //Espera el resultado un maximo de ITIMEOUTms
+  duration = pulseIn(echo, HIGH, TIMEOUT);
+  // convert the time into a distance
+  cm = microsecondsToCentimeters(duration);
+  return cm;
+}
+
+
+
+long microsecondsToCentimeters(long microseconds)
+{
+  //La velocidad del sonido es de 340 m/s = 29 ms/cm
+  //Lo dividimos entre 2 (ida y vuelta)
+  return microseconds / 29 / 2;
+}
+
+						</code></pre>	
+
+					</section>
+
+				</section>
+
+
+				<section data-transition="linear">
+					<section>
+						<h2>Sensor de sonidos</h2>	
+						<img src="img/sd.png"/>	
+
+					</section>
+
+					<section>
+						<h2>Sensor de sonidos</h2>	
+						<img src="img/MicrophoneRGB.png"/>	
+
+					</section>
+
+
+					<section>
+													<h2>Sensor de sonido</h2>	
+
+				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+					#define TIMEOUT 3000
+
+int D0 = 2;
+int state = 0;
+long nextTime = 0;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(2,INPUT);
+ 
+};
+void loop(){
+  
+  
+  
+  if(digitalRead(2) == HIGH && millis() > nextTime){
+    
+    if(state == 0){
+      state = 1;
+      analogWrite(10,200);
+      analogWrite(11,0);
+      nextTime = millis() + 200;     
+    
+    }else{
+      state = 0;
+      analogWrite(10,0);
+      analogWrite(11,200);
+      nextTime = millis() + 200;
+    }
+  
+  }  
+
+};
+
+
+						</code></pre>	
+
+					</section>
+
+				</section>
+
+
+
+				</section>
+				<section>
+					<h2>Fork us on GitHub!</h2>
+					<a class="image" href="http://github.com/acm-usal" target="_blank">
+						<img src="img/nyantocat.gif" alt="Meny">
+					</a>
+				</section>
+				<section>
+					<h3>¿Te quedas con ganas de más?</h3>
+					<!--<a class="image" href="http://acm.org" target="_blank">
+						<img src="img/servers3.jpg" alt="Meny">
+					</a>-->
+					<p>Grupo especial de Arduino en ACM</p>
+					<p>Te ayudamos a planear tus primeros proyectos</p>
+					<p>¿Tienes una idea? ¡Cuéntanosla!</p>
+				</section>
+				<section>
+					<h3>¿Quieres ser parte de ACM</h3>
+					<p>Acceso a parte de la biblioteca digital de ACM</p>
+					<p>Noticias de interés, ofertas de empleo</p>
+					<p>Espíritu de equipo y buena atmósfera</p>
+				</section>
+				<section>
+					<h2>Charrosfera + MediaLab</h2>
+					<img src="img/charrosfera.jpg">
+					<img src="img/medialabusal.jpg">
+				</section>
+				<section>
+					<h2>Para no perderse nada, síguenos:</h2>
+				</br>
+					<ul style="list-style: none;">
+						<li><!--<img height="30px" src="img/twitter.png">--> 
+							<h2><a href="twitter.com/acmsalamanca">@acmsalamanca</a></h2></li>
+						<li><!--<img height="30px" src="img/facebook.png">-->
+						 <h2><a href="facebook.com/USAL"> facebook.com/ACMUSAL</a></h2></li>
+						 <li>					<h2><a href="http://acmusal.org.es">acmusal.org.es</a></h2></li>
+
+					</ul>
+				
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
